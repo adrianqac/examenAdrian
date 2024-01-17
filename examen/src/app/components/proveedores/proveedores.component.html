@@ -13,14 +13,14 @@
         <div class="container mt-4">
             <h3>Lista de Proveedores</h3>
             <a (click)="change()" class="btn btn-sm btn-success">Agregar</a>
-            <div *ngIf="isAgregar">
+            <div *ngIf="isAgregar" class="mb-3">
                 <div class="row col-3">
                     <label>Nombre</label>
-                    <input class="ml-3" type="text" name="nombre"  value="{{nombre}}"/>
+                    <input class="ml-3" type="text" [(ngModel)]="nombre"/>
                 </div>
                 <div class="row col-3">
                     <label>Descripcion</label>
-                    <input class="ml-3" type="text" name="nombre" value="{{descripcion}}"/>
+                    <input class="ml-3" type="text" [(ngModel)]="descripcion"/>
                 </div>
                 <div class="row col-1">
                     <a (click)="agregar()" class="btn btn-sm btn-primary">Aceptar</a>
