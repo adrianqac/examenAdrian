@@ -3,13 +3,13 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Proveedor } from '../../models/proveedor';
 import { ProveedoresService } from './../../services/proveedores.service';
 import {CommonModule} from '@angular/common';
-import {NgForm} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-proveedores',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './proveedores.component.html',
   styleUrl: './proveedores.component.css'
 })
@@ -34,8 +34,8 @@ export class ProveedoresComponent {
 	}
 
 	ngOnInit() {
-    this.nombre="Adrian Vazquez";
-    this.descripcion="descripcion";
+    this.nombre="";
+    this.descripcion="";
     this.isAgregar = false;
     this.servicio.obtenerProveedores().subscribe(data => {
       this.proveedores = data;
