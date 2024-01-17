@@ -1,0 +1,63 @@
+
+<div class="card">
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <img src="./../assets/images/usrs.png" alt="no se encuentra la imagen" width="10%">
+            <h2>{{titulo}}</h2>
+        </div>    
+    </div>
+        
+        <hr/>
+        
+        <div class="container mt-4">
+            <h3>Lista de Proveedores</h3>
+            <a (click)="change()" class="btn btn-sm btn-success">Agregar</a>
+            <div *ngIf="isAgregar">
+                <div class="row col-3">
+                    <label>Nombre</label>
+                    <input class="ml-3" type="text" name="nombre"  value="{{nombre}}"/>
+                </div>
+                <div class="row col-3">
+                    <label>Descripcion</label>
+                    <input class="ml-3" type="text" name="nombre" value="{{descripcion}}"/>
+                </div>
+                <div class="row col-1">
+                    <a (click)="agregar()" class="btn btn-sm btn-primary">Aceptar</a>
+                </div>
+                    
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Descripcion</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let proveedor of proveedores">
+                  <td>{{ proveedor.proveedorID }}</td>
+                  <td>{{ proveedor.nombre }}</td>
+                  <td>{{ proveedor.descripcion }}</td>
+                  <td>
+                    <div class="d-flex justify-content-betwee" >
+						<a (click)="borrarConfirm(proveedor.proveedorID)" class="btn btn-sm btn-danger">Eliminar</a>
+					</div>
+
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            
+        </div>
+        
+        
+</div>
+
+
+
+
+</div>
